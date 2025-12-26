@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 1-CALLBACKS</title>
+</head>
+<body>
+  <h2>Resultado</h2>
+  <div id="resultado"></div>
+<script>
+    function obtenerDatos(callback){
+        fetch('https://jsonplaceholder.typicode.com/todos/2')
+        .then(response => response.json())
+        .then(data => callback(data));
+    }
+    obtenerDatos(function(data){
+        const estado = data.completed ? "Completado" : "No Completado";
+
+        document.getElementById('resultado').innerHTML = `
+            <p><strong>Título:</strong> ${data.title}</p>
+            <p><strong>Estado:</strong> ${estado}</p>
+        `;
+    });
+</script>
+
+
+ </body>
+</html>

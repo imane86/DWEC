@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea Video</title>
+    </head>
+<body> 
+
+    <b>Nombre del Post: </b> <span id="txtNombrePost"></span><br>
+    <b>¿Está Completo?</b> <span id="txtCompletado"></span>
+
+<script>
+   
+
+    function cargarJson(){
+        fetch('https://jsonplaceholder.typicode.com/todos/2')
+        .then(response => response.json())
+        .then(jsonCargado);
+    }
+
+    function jsonCargado(json){
+        let spanNombrePost = document.getElementById("txtNombrePost");
+        spanNombrePost.innerText = json.title;
+
+        let spanCompletado = document.getElementById("txtCompletado");
+
+       // spanCompletado.innerText = json.completed ? "Esta incompleto" : "Esta incompleto";
+
+
+        if(json.complleted){
+            spanCompletado.innerText = "Esta Completo";
+        } else {
+            spanCompletado.innerText = "Esta incompleto";  
+
+        }
+        spanCompletado.innerText = json.completed;
+
+        console.log(json);
+    }
+
+        cargarJson();
+
+</script>
+ </body>   
+</html>
