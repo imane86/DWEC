@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Dashboard Rick & Morty</title>
+  <style>
+
+    body {
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 40px auto;
+    }
+
+  
+
+    #result {
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+      border-radius: 8px ;
+    }
+
+
+    
+    #status { 
+        margin: 20px 0; 
+        color: rgb(43, 155, 99); 
+        background-color: rgb(196, 243, 224);
+        border: solid white 2px;
+        padding: 10px;
+        border-radius: 8px ;
+    }
+
+    #fichaDatos{
+      border: solid white 2px;
+      padding: 10px;
+      background-color:white;
+      border-radius: 8px ;
+    }
+
+    button {
+      margin-right: 5px;
+      background-color: black;
+      color: white;
+      border-radius: 5px;
+    }
+
+    #btnClear {
+      background-color: white;
+      color: black;
+    }
+    
+      img { 
+        width: 200px; 
+         border-radius: 8px ;
+    }
+
+    .card {
+    display: flex;
+    gap: 20px;
+    background-color: white;
+     padding: 15px;
+    border-radius: 10px;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <h1>Mini-dashboard Rick & Morty</h1>
+
+  <p>Busca un personaje por ID usando Callback, promesas o async/await</p>
+  <!-- <input type="number" id="characterId" placeholder="ID del personaje"> -->
+    <h3>ID personaje (1.826) <input type="number" id="characterId" placeholder="ID (1 - 826)">
+
+  <button id="btnCallback">Buscar (Callback)</button>
+  <button id="btnPromises">Buscar (Promesas)</button>
+  <button id="btnAsync">Buscar (Async/Await)</button>
+  <button id="btnClear">Limpiar</button>
+
+  <div id="status"></div>
+  <div id="result"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
